@@ -1,7 +1,5 @@
-package ru.sbt.jschool.session5.problem1;
+package ru.sbt.jchool.session5.problem2.classesforhelp;
 
-/**
- */
 public enum Currency {
     RUR {
         @Override public float to(float amount, Currency to) {

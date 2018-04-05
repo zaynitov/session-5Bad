@@ -1,32 +1,52 @@
-package ru.sbt.jschool.session5.problem1;
+package ru.sbt.jchool.session5.problem2.classesforhelp;
 
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 /**
  */
-@Table(name = "BANK_ACCOUNTS")
 public class Account {
-    @Column
     private long clientID;
 
-    @PrimaryKey
     private long accountID;
 
-    @PrimaryKey
     private long bankID;
 
-    @Column(name = "CURR")
+
+
+
     private Currency currency;
 
-    @Column
     private float balance;
+    private String[] array;
 
-    public Account(long clientID, long accountID, long bankID, Currency currency, float balance) {
+    private List<String> fooElements = Arrays.asList("one", "two", "three");
+
+    public String[] getArray() {
+        return array;
+    }
+
+    public List<String> getSkills() {
+        return skills;
+    }
+
+    List<String> skills;
+
+    public Account() {
+    }
+    public List<String> getFooElements() {
+        return fooElements;
+    }
+    public Account(long clientID, long accountID, long bankID, Currency currency, float balance, String[] array, List<String> skills ) {
         this.clientID = clientID;
         this.accountID = accountID;
         this.bankID = bankID;
         this.currency = currency;
         this.balance = balance;
+        this.array=array;
+        this.skills=skills;
     }
 
     public long getClientID() {
