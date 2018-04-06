@@ -2,7 +2,6 @@ package ru.sbt.jchool.session5.problem2;
 
 import org.junit.Test;
 import ru.sbt.jchool.session5.problem2.classesforhelp.*;
-import ru.sbt.jchool.session5.problem2.classesforhelp.Currency;
 import ru.sbt.jschool.session5.problem2.Main;
 import ru.sbt.jschool.session5.problem2.ObjectToJsonExViaJacksonToCheck;
 
@@ -22,7 +21,7 @@ public class TestObjectToJson {
             skills.add("python");
         }
         Date date = new Date();
-        Account er = new Account(2, 3, 4, Currency.EUR, 34, myStringArray, skills);
+        Account er = new Account(2, 3, 4, 34, myStringArray, skills);
         assertEquals(new ObjectToJsonExViaJacksonToCheck().objToJson(er), new Main().toJSON(er));
     }
 
@@ -58,6 +57,19 @@ public class TestObjectToJson {
         assertEquals("{}", new Main().toJSON(new Object()));
 
     }
-    
+    @Test
+    public void testArray() {
+
+        String[] arrayString = {"sdf","SE"};
+        assertEquals(new ObjectToJsonExViaJacksonToCheck().objToJson(arrayString), new Main().toJSON(arrayString));
+
+    }
+    @Test
+    public void testDate() {
+
+          Date date = new Date();
+        assertEquals(new ObjectToJsonExViaJacksonToCheck().objToJson(date), new Main().toJSON(date));
+
+    }
 
 }

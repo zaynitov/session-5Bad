@@ -17,7 +17,6 @@ public class Account {
 
 
 
-    private Currency currency;
 
     private float balance;
     private String[] array;
@@ -39,11 +38,10 @@ public class Account {
     public List<String> getFooElements() {
         return fooElements;
     }
-    public Account(long clientID, long accountID, long bankID, Currency currency, float balance, String[] array, List<String> skills ) {
+    public Account(long clientID, long accountID, long bankID,  float balance, String[] array, List<String> skills ) {
         this.clientID = clientID;
         this.accountID = accountID;
         this.bankID = bankID;
-        this.currency = currency;
         this.balance = balance;
         this.array=array;
         this.skills=skills;
@@ -73,13 +71,6 @@ public class Account {
         this.bankID = bankID;
     }
 
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
-    }
 
     public float getBalance() {
         return balance;
@@ -89,21 +80,5 @@ public class Account {
         this.balance = balance;
     }
 
-    @Override public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
-        Account account = (Account)o;
-        return clientID == account.clientID &&
-            accountID == account.accountID &&
-            bankID == account.bankID &&
-            Float.compare(account.balance, balance) == 0 &&
-            currency == account.currency;
-    }
-
-    @Override public int hashCode() {
-        return Objects.hash(clientID, accountID, bankID, currency, balance);
-    }
 }
 
