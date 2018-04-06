@@ -1,10 +1,8 @@
 package ru.sbt.jchool.session5.problem2;
 
 import org.junit.Test;
-import ru.sbt.jchool.session5.problem2.classesforhelp.Account;
+import ru.sbt.jchool.session5.problem2.classesforhelp.*;
 import ru.sbt.jchool.session5.problem2.classesforhelp.Currency;
-import ru.sbt.jchool.session5.problem2.classesforhelp.DateAndCalendar;
-import ru.sbt.jchool.session5.problem2.classesforhelp.SubA;
 import ru.sbt.jschool.session5.problem2.Main;
 import ru.sbt.jschool.session5.problem2.ObjectToJsonExViaJacksonToCheck;
 
@@ -46,7 +44,6 @@ public class TestObjectToJson {
     public void testWithDateAndCalendar() {
 
 
-
         DateAndCalendar dateAndCalendar = new DateAndCalendar();
         dateAndCalendar.calendar.setTime(dateAndCalendar.date);
 
@@ -55,5 +52,12 @@ public class TestObjectToJson {
 
     }
 
+    @Test
+    public void testEmptyObject() {
+
+        assertEquals("{}", new Main().toJSON(new Object()));
+
+    }
+    
 
 }

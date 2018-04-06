@@ -31,6 +31,7 @@ public class Main {
         if (resultString.toString().endsWith(",")) {
             resultString.replace(resultString.length() - 1, resultString.length(), "}");
         }
+        else {resultString.append("}");}
         return resultString.toString();
     }
 
