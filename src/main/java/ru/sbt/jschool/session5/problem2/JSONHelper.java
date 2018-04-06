@@ -25,7 +25,8 @@ public class JSONHelper {
         classesWeCannSupport.add(String.class);
     }
 
-    public void addNewClass() {
+    public void addNewClass(Class clazz) {
+        classesWeCannSupport.add(clazz);
 
     }
 
@@ -75,7 +76,7 @@ public class JSONHelper {
             System.out.println("You should add transformToJSON Logic at method addNewClass");
         }
         return null;
-        //Here we put new Logic for formatting new Classes
+        //Here we put new Logic for JSONTransformation for  new Classes
     }
 
     public String arrayToString(String fieldName, Object[] arrayToString) {
