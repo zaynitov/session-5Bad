@@ -1,5 +1,6 @@
 package ru.sbt.jschool.session5.problem2;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,6 +9,10 @@ import java.util.Map;
  */
 public class JSONFormatterImpl implements JSONFormatter {
     private Map<Class, JSONTypeFormatter> types = new HashMap<>();
+
+    public JSONFormatterImpl() {
+        types.put(Date.class, new DateFormatter());
+    }
 
     @Override public String marshall(Object obj) {
         if (obj == null)
