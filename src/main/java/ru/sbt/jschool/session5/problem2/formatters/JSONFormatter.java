@@ -1,4 +1,6 @@
-package ru.sbt.jschool.session5.problem2;
+package ru.sbt.jschool.session5.problem2.formatters;
+
+import ru.sbt.jschool.session5.problem2.JSONTypeFormatter;
 
 public interface JSONFormatter {
     /**

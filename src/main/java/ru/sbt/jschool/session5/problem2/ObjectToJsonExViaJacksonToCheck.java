@@ -14,7 +14,7 @@ public class ObjectToJsonExViaJacksonToCheck {
         String jsonStr = null;
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         mapper.setDateFormat(df);
-        jsonStr = mapper.writeValueAsString(object);
+        jsonStr = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(object);
         return jsonStr;
 
     }
