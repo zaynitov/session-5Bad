@@ -21,7 +21,6 @@ public class Account {
     private float balance;
     private String[] array;
 
-    private List<String> fooElements = Arrays.asList("one", "two", "three");
 
     public String[] getArray() {
         return array;
@@ -34,9 +33,6 @@ public class Account {
     List<String> skills;
 
     public Account() {
-    }
-    public List<String> getFooElements() {
-        return fooElements;
     }
     public Account(long clientID, long accountID, long bankID,  float balance, String[] array, List<String> skills ) {
         this.clientID = clientID;

@@ -1,6 +1,6 @@
 package ru.sbt.jschool.session5.problem2;
 
-
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -9,16 +9,12 @@ import java.text.SimpleDateFormat;
 
 public class ObjectToJsonExViaJacksonToCheck {
 
-    public String objToJson(Object object) {
+    public String objToJson(Object object) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        String jsonStr=null;
+        String jsonStr = null;
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         mapper.setDateFormat(df);
-        try {
-            jsonStr = mapper.writeValueAsString(object);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        jsonStr = mapper.writeValueAsString(object);
         return jsonStr;
 
     }
